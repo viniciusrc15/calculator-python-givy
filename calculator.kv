@@ -77,3 +77,12 @@
         CalculatorBtn: 
             text: "/"
             on_press: entry.text += calculator.verify('/')
+
+    BoxLayout: 
+        spacing: 5
+        CalculatorBtn: 
+            text: "Raiz"
+            on_press: calculator.raizQuadrada(entry.text)
+        CalculatorBtn: 
+            text: "X²"
+            on_press: calculator.quadrado(entry.text)

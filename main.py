@@ -1,5 +1,6 @@
    
-import kivy   
+import math
+import kivy  
         
 from kivy.app import App  
 from kivy.core.window import Window
@@ -27,6 +28,19 @@ class CalculatorFrm(GridLayout):
         else:
             return count
 
+    def raizQuadrada(self, count):
+        num = self.display.text
+        if not num.isdigit():
+            self.display.text = "Erro para calcular"
+        else:
+            self.display.text = str(math.sqrt(num))
+
+    def quadrado(self, count):
+        num = self.display.text
+        if not num.isdigit():
+            self.display.text = "Erro para calcular"
+        else:
+            self.display.text = num ** 2
    
 class Calculator(App): 
    
