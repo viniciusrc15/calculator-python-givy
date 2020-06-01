@@ -1,7 +1,7 @@
 <CalculatorBtn@Button>: 
     font_size: 20
     color: [0,0,0,1]
-    background_normal: 'button.png'
+    background_normal: 'image/button.png'
     radius: 50
    
 <CalculatorFrm>: 
@@ -72,8 +72,8 @@
             text: "0"
             on_press: entry.text += self.text 
         CalculatorBtn: 
-            text: "="
-            on_press: calculator.calculate(entry.text) 
+            text: "."
+            on_press:  entry.text += calculator.verify('.')
         CalculatorBtn: 
             text: "/"
             on_press: entry.text += calculator.verify('/')
@@ -86,3 +86,7 @@
         CalculatorBtn: 
             text: "X²"
             on_press: calculator.quadrado(entry.text)
+        CalculatorBtn: 
+            text: "="
+            on_press: calculator.calculate(entry.text) 
+        

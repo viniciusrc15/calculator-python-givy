@@ -23,24 +23,18 @@ class CalculatorFrm(GridLayout):
                 self.display.text = "Erro para calcular"
 
     def verify(self, count):
-        if ['-','/','+','*',].__contains__(self.display.text[-1:]):
+        if ['-','/','+','*','.'].__contains__(self.display.text[-1:]):
             return ''
         else:
             return count
 
     def raizQuadrada(self, count):
-        num = self.display.text
-        if not num.isdigit():
-            self.display.text = "Erro para calcular"
-        else:
-            self.display.text = str(math.sqrt(num))
+        num = float(self.display.text)
+        self.display.text = str(math.sqrt(num))
 
     def quadrado(self, count):
-        num = self.display.text
-        if not num.isdigit():
-            self.display.text = "Erro para calcular"
-        else:
-            self.display.text = num ** 2
+        num = float(self.display.text)
+        self.display.text = str(num ** 2)
    
 class Calculator(App): 
    
